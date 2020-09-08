@@ -11,6 +11,6 @@ func main() {
 
 	if exists {
 		// Print the value of the environment variable
-		fmt.Print(path)
+		fmt.Print("holi c:", path)
 	}
 }
