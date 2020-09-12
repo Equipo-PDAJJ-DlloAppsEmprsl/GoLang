@@ -1,16 +1,18 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	// Store the PATH environment variable in a variable
-	path, exists := os.LookupEnv("PATH")
-
-	if exists {
-		// Print the value of the environment variable
-		fmt.Print("holi c:", path)
+	err := godotenv.Load("../../environments/dev.env")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	} else {
+		prifle := os.Getenv("PROFILE")
+		log.Print("Profile: ", prifle)
 	}
 }
